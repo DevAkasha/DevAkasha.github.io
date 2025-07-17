@@ -75,10 +75,15 @@
             background: #f8f9fa;
             padding: 10px 20px;
             border-radius: 25px;
-            text-decoration: none;
             color: #333;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .contact-item.link {
+            text-decoration: none;
         }
 
         .contact-item:hover {
@@ -86,6 +91,12 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item.copied {
+            background: #28a745;
+            color: white;
+            transform: scale(1.05);
         }
 
         .section {
@@ -282,10 +293,10 @@
             <h1>허민영</h1>
             <p class="subtitle">게임 클라이언트 개발자</p>
             <div class="contact-info">
-                <a href="mailto:hmy9025@naver.com" class="contact-item">📧 이메일</a>
-                <a href="https://github.com/DevAkasha" class="contact-item">🐱 GitHub</a>
-                <a href="https://devakasha.tistory.com/e" class="contact-item">💼 블로그</a>
-                <a href="tel:+82-10-7240-7860" class="contact-item">📱 연락처</a>
+                <span class="contact-item" onclick="copyToClipboard('hmy9025@naver.com', this)">📧 hmy9025@naver.com</span>
+                <a href="https://github.com/DevAkasha" class="contact-item link">🐱 GitHub</a>
+                <a href="https://devakasha.tistory.com/e" class="contact-item link">💼 블로그</a>
+                <span class="contact-item" onclick="copyToClipboard('010-7240-7860', this)">📱 010-7240-7860</span>
             </div>
         </header>
 
@@ -426,5 +437,28 @@
             <p>이 포트폴리오는 GitHub Pages로 호스팅됩니다.</p>
         </footer>
     </div>
+
+    <script>
+        function copyToClipboard(text, element) {
+            navigator.clipboard.writeText(text).then(function() {
+                const originalText = element.textContent;
+                element.classList.add('copied');
+                
+                if (text.includes('@')) {
+                    element.textContent = '📧 이메일이 복사되었습니다!';
+                } else {
+                    element.textContent = '📱 전화번호가 복사되었습니다!';
+                }
+                
+                setTimeout(function() {
+                    element.classList.remove('copied');
+                    element.textContent = originalText;
+                }, 2000);
+            }).catch(function(err) {
+                console.error('클립보드 복사 실패: ', err);
+                alert('복사 실패! 수동으로 복사해주세요: ' + text);
+            });
+        }
+    </script>
 </body>
 </html>
