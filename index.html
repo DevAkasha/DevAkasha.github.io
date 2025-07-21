@@ -189,15 +189,15 @@
             font-weight: 600;
         }
 
-        /* 메인 프로젝트 스타일 */
-        .main-projects {
+        /* 프로젝트 스타일 */
+        .projects {
             display: flex;
             flex-direction: column;
             gap: 40px;
             margin-top: 30px;
         }
 
-        .main-project-card {
+        .project-card {
             background: #f8f9fa;
             border-radius: 15px;
             padding: 35px;
@@ -205,7 +205,7 @@
             transition: all 0.3s ease;
         }
 
-        .main-project-card:hover {
+        .project-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
             border-color: #667eea;
@@ -335,71 +335,6 @@
             border-color: #764ba2;
         }
 
-        /* 참고 프로젝트 스타일 */
-        .reference-projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .reference-project {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .reference-project:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .reference-project h4 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .reference-project p {
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-        .mini-tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 15px;
-        }
-
-        .mini-tech-tag {
-            background: #e9ecef;
-            color: #495057;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-        }
-
-        .mini-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .mini-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-
-        .mini-links a:hover {
-            color: #764ba2;
-        }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -431,7 +366,7 @@
                 align-items: center;
             }
 
-            .main-project-card {
+            .project-card {
                 padding: 25px 20px;
             }
 
@@ -451,10 +386,6 @@
 
             .project-links {
                 justify-content: center;
-            }
-
-            .reference-projects {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -535,9 +466,9 @@
         </section>
 
         <section class="section">
-            <h2>💼 메인 프로젝트</h2>
-            <div class="main-projects">
-                <div class="main-project-card">
+            <h2>💼 프로젝트</h2>
+            <div class="projects">
+                <div class="project-card">
                     <div class="project-header">
                         <h3>LuciferSurvival</h3>
                         <span class="project-type">전략 델빌딩 뱀서라이크 게임 • 팀 프로젝트 • 개발리드</span>
@@ -549,40 +480,87 @@
                     
                     <div class="tech-highlights">
                         <div class="tech-highlight">
-                            <div class="tech-icon">🧠</div>
-                            <div class="tech-content">
-                                <h4>고도화된 Behavior Tree 시스템</h4>
-                                <p>조건부 노드와 액션 노드를 조합한 적 AI 구현. 플레이어 추적, 공격 패턴, 상태 관리를 모듈화하여 확장성 확보</p>
-                                <code>IsEnemyInRangeCondition → MoveToPlayerAction → AttackPlayerAction</code>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-highlight">
-                            <div class="tech-icon">🎲</div>
-                            <div class="tech-content">
-                                <h4>확률 기반 보상 시스템</h4>
-                                <p>이진탐색 알고리즘을 활용한 누적확률 테이블 구현. O(log n) 시간복잡도로 효율적인 랜덤 보상 시스템 설계</p>
-                                <code>Binary Search + Cumulative Probability Table</code>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-highlight">
                             <div class="tech-icon">🏗️</div>
                             <div class="tech-content">
-                                <h4>절차적 맵 생성 시스템</h4>
-                                <p>프리팹 Bounds 계산과 동적 배치 알고리즘으로 겹침 없는 맵 자동 생성. 95% 여백률 적용으로 최적화된 레이아웃 구현</p>
-                                <code>Bounds Calculation + Dynamic Wall Placement</code>
+                                <h4>Model-Entity-Part 구조적 설계</h4>
+                                <p>명확한 계층 분리로 확장 가능한 아키텍처 구현. 유지보수성 향상을 통한 대규모 프로젝트 관리</p>
+                                <code>Model ↔ Entity ↔ Part 계층적 구조</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">⚡</div>
+                            <div class="tech-content">
+                                <h4>Modifier 시스템을 통한 Effect 활용</h4>
+                                <p>다양한 버프/디버프 효과를 모듈화하여 조합 가능한 시스템 구현. 게임플레이의 깊이와 전략성 확보</p>
+                                <code>BaseModifier + EffectStack System</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🎮</div>
+                            <div class="tech-content">
+                                <h4>고급 상태 관리 시스템</h4>
+                                <p>복잡한 게임 상태를 체계적으로 관리하는 State Machine 패턴 적용. 안정적인 게임 흐름 보장</p>
+                                <code>StateMachine + StateContext Management</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🏭</div>
+                            <div class="tech-content">
+                                <h4>Factory Pattern 기반 스킬 시스템</h4>
+                                <p>스킬 생성과 관리를 팩토리 패턴으로 추상화. 확장성과 유지보수성을 갖춘 스킬 시스템 구현</p>
+                                <code>SkillFactory + SkillBuilder Pattern</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🧠</div>
+                            <div class="tech-content">
+                                <h4>Behavior Tree 구현</h4>
+                                <p>조건부 노드와 액션 노드를 조합한 적 AI 구현. 플레이어 추적, 공격 패턴, 상태 관리를 모듈화하여 확장성 확보</p>
+                                <code>CompositeNode + ActionNode + ConditionNode</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">📊</div>
+                            <div class="tech-content">
+                                <h4>헬스바 드로우콜 최적화</h4>
+                                <p>UI 렌더링 최적화를 통한 성능 향상. 배치 처리와 오브젝트 풀링으로 드로우콜 최소화</p>
+                                <code>UI Batching + Object Pooling</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🔧</div>
+                            <div class="tech-content">
+                                <h4>디버그 툴 시스템</h4>
+                                <p>개발 효율성 향상을 위한 인게임 디버깅 도구 구현. 실시간 값 조정과 상태 모니터링 지원</p>
+                                <code>Runtime Debug UI + Value Inspector</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">💾</div>
+                            <div class="tech-content">
+                                <h4>데이터 매니저 활용</h4>
+                                <p>게임 데이터의 체계적 관리와 로딩 시스템. JSON 기반 데이터 구조로 유연한 콘텐츠 관리</p>
+                                <code>DataManager + JSON Serialization</code>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tech-stack">
-                        <span class="tech-tag primary">Behavior Tree</span>
-                        <span class="tech-tag primary">Procedural Generation</span>
-                        <span class="tech-tag primary">Binary Search Algorithm</span>
-                        <span class="tech-tag">MV Pattern</span>
-                        <span class="tech-tag">NavMesh</span>
-                        <span class="tech-tag">Object Pooling</span>
+                        <span class="tech-tag primary">MV Pattern</span>
+                        <span class="tech-tag primary">Modifier System</span>
+                        <span class="tech-tag primary">State Management</span>
+                        <span class="tech-tag">Factory Pattern</span>
+                        <span class="tech-tag">Behavior Tree</span>
+                        <span class="tech-tag">Draw Call Optimization</span>
+                        <span class="tech-tag">Debug Tools</span>
+                        <span class="tech-tag">Data Management</span>
                     </div>
                     
                     <div class="project-links">
@@ -592,7 +570,7 @@
                     </div>
                 </div>
 
-                <div class="main-project-card">
+                <div class="project-card">
                     <div class="project-header">
                         <h3>Akasha Architecture Framework</h3>
                         <span class="project-type">Unity 게임 개발 아키텍처 프레임워크 • 개인 프로젝트</span>
@@ -606,38 +584,56 @@
                         <div class="tech-highlight">
                             <div class="tech-icon">⚛️</div>
                             <div class="tech-content">
-                                <h4>반응형 데이터 바인딩 시스템</h4>
+                                <h4>반응형 프로그래밍</h4>
                                 <p>RxEvent와 RxProperty 기반 실시간 상태 동기화. 함수형 프로그래밍 패러다임으로 사이드 이펙트 최소화</p>
                                 <code>model.Count.Subscribe(OnCountChanged, this, RxType.Functional)</code>
                             </div>
                         </div>
                         
                         <div class="tech-highlight">
-                            <div class="tech-icon">🏛️</div>
+                            <div class="tech-icon">🛡️</div>
                             <div class="tech-content">
-                                <h4>Entity-Part-Spirit 아키텍처</h4>
-                                <p>존재론적 사고를 바탕으로 한 3계층 구조. Entity(존재), Part(기능), Spirit(로직)의 명확한 역할 분리</p>
-                                <code>Entity ↔ Part ↔ Spirit 순환 의존성 해결</code>
+                                <h4>메모리 안전성 관리</h4>
+                                <p>자동 구독 해제 시스템으로 메모리 누수 방지. RxContextBehaviour 기반 생명주기 관리</p>
+                                <code>OnDestroy() → Auto Dispose Subscriptions</code>
                             </div>
                         </div>
                         
                         <div class="tech-highlight">
-                            <div class="tech-icon">🔄</div>
+                            <div class="tech-icon">🎯</div>
                             <div class="tech-content">
-                                <h4>Screen 기반 UI 관리 시스템</h4>
-                                <p>BaseScreen 추상화를 통한 UI 생명주기 관리. Setup-Refresh-Cleanup 패턴으로 메모리 효율성 확보</p>
-                                <code>Screen Lifecycle: OnSetup() → Refresh() → OnDeactivate()</code>
+                                <h4>타입 안전성 보장</h4>
+                                <p>컴파일 타임 타입 검증으로 런타임 에러 방지. 제네릭 기반 강타입 시스템</p>
+                                <code>RxVar&lt;T&gt;, RxExpr&lt;T&gt; Type-Safe Architecture</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">⚡</div>
+                            <div class="tech-content">
+                                <h4>이벤트 스케줄링 최적화</h4>
+                                <p>우선순위 기반 이벤트 큐로 프레임 드랍 방지. 배치 처리를 통한 성능 최적화</p>
+                                <code>RxQueue.EnqueueLogical(action, priority)</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🚀</div>
+                            <div class="tech-content">
+                                <h4>성능 최적화 기법</h4>
+                                <p>Object Pooling, Lazy Evaluation, Event Batching으로 고성능 보장</p>
+                                <code>Lazy&lt;T&gt; + Object Pool + Event Batching</code>
                             </div>
                         </div>
                     </div>
                     
                     <div class="tech-stack">
                         <span class="tech-tag primary">Reactive Programming</span>
-                        <span class="tech-tag primary">SoC Architecture</span>
-                        <span class="tech-tag primary">Functional Programming</span>
-                        <span class="tech-tag">Observer Pattern</span>
-                        <span class="tech-tag">Lambda Expression</span>
-                        <span class="tech-tag">Method Chaining</span>
+                        <span class="tech-tag primary">Memory Safety</span>
+                        <span class="tech-tag primary">Type Safety</span>
+                        <span class="tech-tag">Event Scheduling</span>
+                        <span class="tech-tag">Performance Optimization</span>
+                        <span class="tech-tag">SoC Architecture</span>
                     </div>
                     
                     <div class="project-links">
@@ -645,24 +641,102 @@
                         <a href="https://github.com/DevAkasha/GPTRPG" class="project-link">📁 GitHub</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>📂 참고 프로젝트</h2>
-            <div class="reference-projects">
-                <div class="reference-project">
-                    <h4>Runner</h4>
-                    <p>2D 쿠키런라이크 러닝 액션 게임 • 아이템, 점수시스템, 매니저, 보스전 담당</p>
-                    <div class="mini-tech-stack">
-                        <span class="mini-tech-tag">Coroutine</span>
-                        <span class="mini-tech-tag">Abstract Class</span>
-                        <span class="mini-tech-tag">Singleton</span>
-                        <span class="mini-tech-tag">Hooking</span>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Runner</h3>
+                        <span class="project-type">2D 쿠키런라이크 러닝 액션 게임 • 팀 프로젝트 • 아이템/점수/매니저/보스전 담당</span>
                     </div>
-                    <div class="mini-links">
-                        <a href="https://play.unity.com/en/games/a50319d3-2474-4e3e-8587-ac75815c9116/webgl">🔗 플레이</a>
-                        <a href="https://github.com/DevAkasha/Runner">📁 GitHub</a>
+                    <p class="project-overview">
+                        정밀한 물리 시스템과 동적 콜라이더 조작을 통해 부드러운 2D 플랫포머 액션을 구현한 러닝 게임입니다. 
+                        팀 협업을 통해 완성도 높은 게임플레이를 완성했습니다.
+                    </p>
+                    
+                    <div class="tech-highlights">
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🎯</div>
+                            <div class="tech-content">
+                                <h4>Raycast 기반 정밀 감지 시스템</h4>
+                                <p>복수의 Raycast를 활용한 지면/벽 감지로 정확한 점프와 벽 슬라이딩 구현. 물리적 정밀도와 게임플레이 안정성 확보</p>
+                                <code>Physics2D.Raycast(groundCheck) + WallCheck System</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🔄</div>
+                            <div class="tech-content">
+                                <h4>동적 콜라이더 변형 시스템</h4>
+                                <p>슬라이드 액션 시 콜라이더 크기와 방향을 실시간 변경. 자연스러운 캐릭터 변형과 정확한 충돌 처리</p>
+                                <code>collider.size/direction Real-time Modification</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag primary">Raycast System</span>
+                        <span class="tech-tag primary">Dynamic Collider</span>
+                        <span class="tech-tag">Coroutine</span>
+                        <span class="tech-tag">Abstract Class</span>
+                        <span class="tech-tag">Singleton Pattern</span>
+                        <span class="tech-tag">Event Hooking</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://play.unity.com/en/games/a50319d3-2474-4e3e-8587-ac75815c9116/webgl" class="project-link primary">🔗 플레이</a>
+                        <a href="https://github.com/DevAkasha/Runner" class="project-link">📁 GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Reverse Dungeon</h3>
+                        <span class="project-type">콘솔 기반 턴제 RPG • 팀 프로젝트 • 개발 기간: 7일</span>
+                    </div>
+                    <p class="project-overview">
+                        마왕의 시점에서 던전을 지키는 역전된 던전 RPG입니다. 
+                        외부 라이브러리 활용과 콘솔 최적화를 통해 몰입감 있는 게임 경험을 제공합니다.
+                    </p>
+                    
+                    <div class="tech-highlights">
+                        <div class="tech-highlight">
+                            <div class="tech-icon">⏱️</div>
+                            <div class="tech-content">
+                                <h4>속도 기반 턴 순서 시스템</h4>
+                                <p>캐릭터 속도 스탯에 따른 동적 턴 순서 계산. 버프/디버프 효과의 지속시간과 중첩 관리로 전략적 전투 구현</p>
+                                <code>Speed-based Turn Order + Buff Duration Management</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🎵</div>
+                            <div class="tech-content">
+                                <h4>NAudio 비동기 오디오 처리</h4>
+                                <p>BGM과 효과음의 동시 재생 및 메모리 관리. 비동기 스트리밍으로 끊김 없는 사운드 경험 제공</p>
+                                <code>NAudio Async Streaming + Memory Management</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🖥️</div>
+                            <div class="tech-content">
+                                <h4>콘솔 UI 최적화</h4>
+                                <p>커서 위치 관리와 화면 갱신 최적화로 깜빡임 방지. 한글-영문 혼재 텍스트의 정확한 정렬 처리</p>
+                                <code>Console Cursor Management + Screen Refresh Optimization</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag primary">Turn-based System</span>
+                        <span class="tech-tag primary">NAudio Library</span>
+                        <span class="tech-tag primary">Console Optimization</span>
+                        <span class="tech-tag">Buff Management</span>
+                        <span class="tech-tag">Async Programming</span>
+                        <span class="tech-tag">Memory Management</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://github.com/DevAkasha/ReverseDungeonSparta" class="project-link primary">📁 GitHub</a>
                     </div>
                 </div>
             </div>
