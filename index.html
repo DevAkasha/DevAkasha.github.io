@@ -189,67 +189,214 @@
             font-weight: 600;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        /* 메인 프로젝트 스타일 */
+        .main-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 30px;
         }
 
-        .project-card {
+        .main-project-card {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: 15px;
+            padding: 35px;
+            border: 2px solid #e9ecef;
             transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        .main-project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            border-color: #667eea;
         }
 
-        .project-card h3 {
+        .project-header {
+            margin-bottom: 20px;
+        }
+
+        .project-header h3 {
             color: #333;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .project-card p {
+        .project-type {
             color: #666;
-            margin-bottom: 15px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .project-overview {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        .tech-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .tech-highlight {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .tech-icon {
+            font-size: 2em;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .tech-content h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .tech-content p {
+            color: #666;
             line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .tech-content code {
+            background: #f1f3f4;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.85em;
+            color: #d63384;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 15px;
+            margin-bottom: 25px;
         }
 
         .tech-tag {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9em;
+        }
+
+        .tech-tag.primary {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
         }
 
         .project-links {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
         .project-link {
             color: #667eea;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         .project-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .project-link.primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .project-link.primary:hover {
+            background: #764ba2;
+            border-color: #764ba2;
+        }
+
+        /* 참고 프로젝트 스타일 */
+        .reference-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .reference-project {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .reference-project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .reference-project h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .reference-project p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .mini-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .mini-tech-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        .mini-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .mini-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .mini-links a:hover {
             color: #764ba2;
         }
 
@@ -283,6 +430,32 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .main-project-card {
+                padding: 25px 20px;
+            }
+
+            .tech-highlights {
+                gap: 20px;
+            }
+
+            .tech-highlight {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .tech-icon {
+                font-size: 1.5em;
+            }
+
+            .project-links {
+                justify-content: center;
+            }
+
+            .reference-projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -295,7 +468,7 @@
             <div class="contact-info">
                 <span class="contact-item" onclick="copyToClipboard('hmy9025@naver.com', this)">📧 hmy9025@naver.com</span>
                 <a href="https://github.com/DevAkasha" class="contact-item link">🐱 GitHub</a>
-                <a href="https://devakasha.tistory.com/e" class="contact-item link">💼 블로그</a>
+                <a href="https://devakasha.tistory.com/" class="contact-item link">💼 블로그</a>
                 <span class="contact-item" onclick="copyToClipboard('010-7240-7860', this)">📱 010-7240-7860</span>
             </div>
         </header>
@@ -309,23 +482,24 @@
             <h2>🛠️ 기술 스택</h2>
             <div class="skills-grid">
                 <div class="skill-item">
-                    <h3>DevOps</h3>
-                    <p>유니티(C#), Git, GitHub, Claude</p>
+                    <h3>개발 환경</h3>
+                    <p>Unity Engine, C# .NET, Git, GitHub, Visual Studio</p>
                 </div>
                 <div class="skill-item">
-                    <h3>디자인패턴</h3>
-                    <p>Singleton, Composite, Facade, Proxy, Observer, State, Strategy  </p>
+                    <h3>아키텍처 패턴</h3>
+                    <p>MV Pattern, Singleton, Observer, Strategy, State, Facade, Proxy</p>
                 </div>
                 <div class="skill-item">
-                    <h3>패러다임</h3>
-                    <p>OOP, 반응형, DDD </p>
+                    <h3>프로그래밍 패러다임</h3>
+                    <p>OOP, Reactive Programming, Functional Programming, DDD</p>
                 </div>
                 <div class="skill-item">
-                    <h3>철학</h3>
-                    <p>칸트 인식론, 비트겐슈타인 게임이론, 율곡 이기론 </p>
+                    <h3>설계 철학</h3>
+                    <p>칸트 인식론, 비트겐슈타인 게임이론, 율곡 이기론</p>
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>🎯 핵심역량</h2>
             <div class="competency-grid">
@@ -359,56 +533,136 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
-            <h2>💼 프로젝트</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>LuciferSurvival</h3>
-                    <p>전략 델빌딩 뱀서라이크 게임(팀프로젝트) 개발리드로 참여<br> 기초구조설계, 리팩토링, 빌드, 플레이어 스킬, 유닛 스킬, 적 BT 담당 </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Modifier</span>
-                        <span class="tech-tag">ObjectPool</span>
-                        <span class="tech-tag">Reactive</span>
-                        <span class="tech-tag">FSM</span>
-                        <span class="tech-tag">BT</span>
-                        <span class="tech-tag">NevMesh</span>
-                        <span class="tech-tag">DataFramework</span>
+            <h2>💼 메인 프로젝트</h2>
+            <div class="main-projects">
+                <div class="main-project-card">
+                    <div class="project-header">
+                        <h3>LuciferSurvival</h3>
+                        <span class="project-type">전략 델빌딩 뱀서라이크 게임 • 팀 프로젝트 • 개발리드</span>
                     </div>
+                    <p class="project-overview">
+                        MV패턴 기반 구조설계를 통해 프로젝트 규모를 6배 확장시킨 전략적 액션 게임입니다. 
+                        아키텍트로서 팀 개발 효율성을 크게 향상시켰습니다.
+                    </p>
+                    
+                    <div class="tech-highlights">
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🧠</div>
+                            <div class="tech-content">
+                                <h4>고도화된 Behavior Tree 시스템</h4>
+                                <p>조건부 노드와 액션 노드를 조합한 적 AI 구현. 플레이어 추적, 공격 패턴, 상태 관리를 모듈화하여 확장성 확보</p>
+                                <code>IsEnemyInRangeCondition → MoveToPlayerAction → AttackPlayerAction</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🎲</div>
+                            <div class="tech-content">
+                                <h4>확률 기반 보상 시스템</h4>
+                                <p>이진탐색 알고리즘을 활용한 누적확률 테이블 구현. O(log n) 시간복잡도로 효율적인 랜덤 보상 시스템 설계</p>
+                                <code>Binary Search + Cumulative Probability Table</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🏗️</div>
+                            <div class="tech-content">
+                                <h4>절차적 맵 생성 시스템</h4>
+                                <p>프리팹 Bounds 계산과 동적 배치 알고리즘으로 겹침 없는 맵 자동 생성. 95% 여백률 적용으로 최적화된 레이아웃 구현</p>
+                                <code>Bounds Calculation + Dynamic Wall Placement</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag primary">Behavior Tree</span>
+                        <span class="tech-tag primary">Procedural Generation</span>
+                        <span class="tech-tag primary">Binary Search Algorithm</span>
+                        <span class="tech-tag">MV Pattern</span>
+                        <span class="tech-tag">NavMesh</span>
+                        <span class="tech-tag">Object Pooling</span>
+                    </div>
+                    
                     <div class="project-links">
-                        <a href="https://play.unity.com/en/games/02270b86-388a-4900-b7e4-f222d6c930e8/lucifersurvival" class="project-link">🔗플레이</a>
-                        <a href="https://www.youtube.com/watch?v=bNhzaPrOtWU" class="project-link">▶️시연영상</a>
-                        <a href="https://github.com/DevAkasha/LuciferSurvival" class="project-link">📁GitHub</a>
+                        <a href="https://play.unity.com/en/games/02270b86-388a-4900-b7e4-f222d6c930e8/lucifersurvival" class="project-link primary">🔗 플레이</a>
+                        <a href="https://www.youtube.com/watch?v=bNhzaPrOtWU" class="project-link">▶️ 시연영상</a>
+                        <a href="https://github.com/DevAkasha/LuciferSurvival" class="project-link">📁 GitHub</a>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <h3>GPTRPG</h3>
-                    <p> 반응형 아키텍처 프레임워크 구현(개인 프로젝트)</p>
+
+                <div class="main-project-card">
+                    <div class="project-header">
+                        <h3>Akasha Architecture Framework</h3>
+                        <span class="project-type">Unity 게임 개발 아키텍처 프레임워크 • 개인 프로젝트</span>
+                    </div>
+                    <p class="project-overview">
+                        관심사의 분리(SoC) 원칙을 기반으로 한 반응형 게임 아키텍처 프레임워크입니다. 
+                        철학적 존재론을 차용하여 확장성과 유지보수성을 극대화했습니다.
+                    </p>
+                    
+                    <div class="tech-highlights">
+                        <div class="tech-highlight">
+                            <div class="tech-icon">⚛️</div>
+                            <div class="tech-content">
+                                <h4>반응형 데이터 바인딩 시스템</h4>
+                                <p>RxEvent와 RxProperty 기반 실시간 상태 동기화. 함수형 프로그래밍 패러다임으로 사이드 이펙트 최소화</p>
+                                <code>model.Count.Subscribe(OnCountChanged, this, RxType.Functional)</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🏛️</div>
+                            <div class="tech-content">
+                                <h4>Entity-Part-Spirit 아키텍처</h4>
+                                <p>존재론적 사고를 바탕으로 한 3계층 구조. Entity(존재), Part(기능), Spirit(로직)의 명확한 역할 분리</p>
+                                <code>Entity ↔ Part ↔ Spirit 순환 의존성 해결</code>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-highlight">
+                            <div class="tech-icon">🔄</div>
+                            <div class="tech-content">
+                                <h4>Screen 기반 UI 관리 시스템</h4>
+                                <p>BaseScreen 추상화를 통한 UI 생명주기 관리. Setup-Refresh-Cleanup 패턴으로 메모리 효율성 확보</p>
+                                <code>Screen Lifecycle: OnSetup() → Refresh() → OnDeactivate()</code>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="tech-stack">
-                        <span class="tech-tag">Reactive</span>
-                        <span class="tech-tag">람다식</span>
-                        <span class="tech-tag">메서드체인</span>
-                        <span class="tech-tag">Observer</span>
+                        <span class="tech-tag primary">Reactive Programming</span>
+                        <span class="tech-tag primary">SoC Architecture</span>
+                        <span class="tech-tag primary">Functional Programming</span>
+                        <span class="tech-tag">Observer Pattern</span>
+                        <span class="tech-tag">Lambda Expression</span>
+                        <span class="tech-tag">Method Chaining</span>
                     </div>
+                    
                     <div class="project-links">
-                        <a href="https://github.com/DevAkasha/GPTRPG" class="project-link">📁GitHub</a>
+                        <a href="https://devakasha.tistory.com/111" class="project-link primary">📖 아키텍처 소개글</a>
+                        <a href="https://github.com/DevAkasha/GPTRPG" class="project-link">📁 GitHub</a>
                     </div>
-                </div>                
-                <div class="project-card">
-                    <h3>Runner</h3>
-                    <p>2D 쿠키런라이크 러닝 액선 게임(팀 프로젝트)<br> 아이템, 점수시스템, 매니저, 보스전 담당 </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Coroutine</span>
-                        <span class="tech-tag">Hooking</span>
-                        <span class="tech-tag">Abstract Class</span>
-                        <span class="tech-tag">Singleton</span>
-                        <span class="tech-tag">Gizmos</span>
-                        <span class="tech-tag">Overloading</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📂 참고 프로젝트</h2>
+            <div class="reference-projects">
+                <div class="reference-project">
+                    <h4>Runner</h4>
+                    <p>2D 쿠키런라이크 러닝 액션 게임 • 아이템, 점수시스템, 매니저, 보스전 담당</p>
+                    <div class="mini-tech-stack">
+                        <span class="mini-tech-tag">Coroutine</span>
+                        <span class="mini-tech-tag">Abstract Class</span>
+                        <span class="mini-tech-tag">Singleton</span>
+                        <span class="mini-tech-tag">Hooking</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://play.unity.com/en/games/a50319d3-2474-4e3e-8587-ac75815c9116/webgl" class="project-link">🔗플레이</a>
-                        <a href="" class="project-link">▶️시연영상</a>
-                        <a href="https://github.com/DevAkasha/Runner" class="project-link">📁GitHub</a>
+                    <div class="mini-links">
+                        <a href="https://play.unity.com/en/games/a50319d3-2474-4e3e-8587-ac75815c9116/webgl">🔗 플레이</a>
+                        <a href="https://github.com/DevAkasha/Runner">📁 GitHub</a>
                     </div>
                 </div>
             </div>
@@ -421,16 +675,16 @@
                 <p>신소재공학부 고분자전공 공부중 발명 창업활동을 위해 중퇴</p>
             </div>
             <div class="skill-item">
-                <h3> 참신나소프트 창업 (2014 - 2018)</h3>
-                <p> 오답노트 관리용 애플리케이션 개발 </p>
+                <h3>참신나소프트 창업 (2014 - 2018)</h3>
+                <p>오답노트 관리용 애플리케이션 개발</p>
             </div>
             <div class="skill-item">
-                <h3> 겜생겜팩토리 창업 (2018 - 2024)</h3>
-                <p> 인디게임 개발, 기획자 및 PM으로 활동. </p>
+                <h3>겜생겜팩토리 창업 (2018 - 2024)</h3>
+                <p>인디게임 개발, 기획자 및 PM으로 활동</p>
             </div>
             <div class="skill-item">
-                <h3> LM디지털 오퍼레이터 근무 (2022 - 2024)</h3>
-                <p> PCB공정 전기검사 ATG 오퍼레이터. 인디팀 운영자금을 위한 생산직 근무 </p>
+                <h3>LM디지털 오퍼레이터 근무 (2022 - 2024)</h3>
+                <p>PCB공정 전기검사 ATG 오퍼레이터. 인디팀 운영자금을 위한 생산직 근무</p>
             </div>
         </section>
 
